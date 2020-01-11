@@ -12,7 +12,7 @@ export class RecipeService {
   constructor(private http: HttpClient) {}
 
   getRecipes() {
-    this.http.get('http://localhost:3000/api/recipes').subscribe(
+    this.http.get('https://vicjuma.herokuapp.com/api/recipes').subscribe(
       (recipes: Recipe[]) => {
         this.recipes$.next(recipes);
       },
@@ -23,18 +23,18 @@ export class RecipeService {
   }
 
   getSingleRecipe(id: string) {
-    return this.http.get('http://localhost:3000/api/recipes/' + id);
+    return this.http.get('https://vicjuma.herokuapp.com/api/recipes/' + id);
   }
 
   saveRecipe(recipe: Recipe) {
-    return this.http.post('http://localhost:3000/api/recipes', recipe);
+    return this.http.post('https://vicjuma.herokuapp.com/api/recipes', recipe);
   }
 
   modifyRecipe(id: string, recipe: Recipe) {
-    return this.http.put('http://localhost:3000/api/recipes/' + id, recipe);
+    return this.http.put('https://vicjuma.herokuapp.com/api/recipes/' + id, recipe);
   }
 
   deleteRecipe(id: string) {
-    return this.http.delete('http://localhost:3000/api/recipes/' + id);
+    return this.http.delete('https://vicjuma.herokuapp.com/api/recipes/' + id);
   }
 }
