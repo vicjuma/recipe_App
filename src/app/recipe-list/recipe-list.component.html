@@ -1,5 +1,5 @@
 <mat-spinner *ngIf="loading"></mat-spinner>
-<mat-card *ngIf="!loading">
+<mat-card *ngIf="!loading" class="login-form">
   <h1 mat-card-title>Recipes</h1>
   <mat-card-subtitle>All of your favourites!</mat-card-subtitle>
   <mat-card-content *ngIf="recipes.length <= 0">
@@ -42,7 +42,7 @@
           <span class="fa fa-burn"></span>
         </div>
       </div>
-      <button (click)="onOpenRecipe(recipe._id)" mat-raised-button color="accent">See recipe</button>
+      <button (click)="onOpenRecipe(recipe._id)" mat-raised-button color="primary">See recipe</button>
     </mat-expansion-panel>
   </mat-card-content>
 </mat-card>
